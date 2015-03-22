@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{% block title %} {% endblock %}</title>
+		{% block javascript %}<script type="text/javascript" src="/js/scripts.js"></script>{% endblock %}
+		{% block ajax %}<script type="text/javascript" src="/js/ajax.js"></script>{% endblock %}
+		{% block css %}<link rel="stylesheet" type="text/css" href="/css/style.css">{% endblock %}
+		<meta name="Title" content="Chus Naval Home" />
+	</head>
+	<body>
+		{% block content %}
+		{% block head %}{% endblock %}
+		{% endblock %}
+		{% block pie %} <hr><p>Chus Naval's Home Page</p>{% endblock %}
+	</body>
+</html>
