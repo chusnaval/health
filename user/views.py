@@ -3,12 +3,14 @@ from django.shortcuts import render_to_response
 # Create your views here.
 from models import User
 #######################
+
+
 def search(request):
-    search = request.GET.get('q', '')
-    if search:
-        results = User.objects.filter(login=search).order_by('id')
-        return render_to_response("search.html", {"results": results, "search": search})
-    return render_to_response("search.html", {"results": [], "search": search})
+    query = request.GET.get('q', '')
+    if query:
+        results = User.objects.get(login__icontains=query).order_by('id')
+        return render_to_response("search.html", {"results": results, "search": query})
+    return render_to_response("search.html", {"results": [], "search": query})
 
 
 #######################
