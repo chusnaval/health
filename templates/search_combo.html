@@ -7,13 +7,14 @@
 	<div><label for="p">Buscar: </label></div>
 	<SELECT NAME="q" onChange="searchFiltered('http://localhost:8000/search/','result','Vacios'); return false">
 		<OPTION value="">Seleccione</OPTION>
+        {% for user in results %}<OPTION VALUE= '{{user.id}}' >{{user.login}}</OPTION>{% endfor %}
 	</SELECT>
 {% if query %}
 	<h1>Resultados para "{{ query | escape }}":</h1>
 	{% if results %}
 		<table id="table_">
 			<tr><td>Login</td></tr>
-			{% for users in results %}
+			{% for user in results %}
 				<tr><td>{{user.login|upper}}</td></tr>
 			{% endfor %}
 		</table>
