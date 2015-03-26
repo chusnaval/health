@@ -1,0 +1,14 @@
+{% extends "html/base.html" %}
+{% block title %}Chus Naval Home{% endblock %}
+{% block content %}
+    <div id="divEmpty"></div>
+    <div id="login">
+        <form class="formStyle" name="form" action="#" onsubmit="loginUser(event); return false">
+            <div><label for="login" form="form">Login: </label></div>
+            <div><input type="text" name="login" value="{{ login |escape }}"></div>
+            <div><input type="text" name="pass" value="{{ pass |escape }}"></div>
+            <div><input type="submit" value="Go"></div>
+        </form>
+    </div>
+
+{% endblock %}

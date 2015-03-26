@@ -1,0 +1,23 @@
+{% extends "html/base.html" %}
+{% block title %}Chus Naval Home{% endblock %}
+{% block content %}
+    <div id="divResult">
+        {% block head %}<h1>Busqueda filtrada</h1>{% endblock %}
+
+        {% if user %}
+            <table id="table_">
+                <tr>
+                    <td>Login</td>
+                </tr>
+
+                    <tr>
+                        <td>{{ user.login|upper }}</td>
+                    </tr>
+            </table>
+        {% else %}
+            <div class="msg" align="justify">Usuario o password no valido</div>
+        {% endif %}
+
+
+    </div>
+{% endblock %}

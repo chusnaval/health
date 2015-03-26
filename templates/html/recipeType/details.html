@@ -1,0 +1,29 @@
+{% extends "html/base.html" %}
+{% block title %}Django[Python]{% endblock %}
+{% block content %}
+    <div id="result">
+    {% block headed %}<h1>Actualizar un registro</h1>{% endblock %}
+    <form class="formStyle" name="form" action=""
+          onsubmit="update('http://localhost:8000/update/','result','Empty'); return false">
+        {% if results %}
+            <table id="tabla_">
+                {% for recipeType in results %}
+                    <tr>
+                    <tr>
+                        <td><label for="q" form="form">Name:</label></td>
+                        <td><input type="text" name="id" value="{{ recipeType.id }}" readonly></td>
+                    </tr>
+                    <tr>
+                        <td colspan=2><input type="submit" value="Actualizar"></td>
+                    </tr></tr>
+                    <tr>
+                    </tr>
+                    </table>
+                {% endfor %}
+        {% else %}
+            <p>Datos no encontrados</p>
+        {% endif %}
+    </form>
+    <div id="Empty" align="center"></div>
+{% endblock %}
+</div>

@@ -1,0 +1,33 @@
+{% extends "html/base.html" %}
+{% block title %}Chus Naval Home{% endblock %}
+{% block content %}
+    <div id="result">
+        {% block headed %}<h1>Agregar un registro</h1>{% endblock %}
+        <form class='formStyle' name="form" action="#"
+              onsubmit="create('http://localhost:8000/create/','result','Empty'); return false">
+            <table>
+                <tr>
+                    <td>
+                        <div><label for="q" form="form">Nombre:</label></div>
+                    </td>
+                    <td>
+                        <input type="text" name="name" value="{{ query|escape }}" onkeypress='return onlyChars(event)'>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div><input type="submit" value="Aceptar"></div>
+                    </td>
+                    <td>
+                        <div><input type="reset" value="Limpiar"></div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        {% if success %}
+            <div class="msg" align="justify">Registro agregado</div>
+        {% endif %}
+        <div id="Empty" align="center"></div>
+    </div>
+{% endblock %}
+

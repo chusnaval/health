@@ -1,0 +1,30 @@
+{% extends "html/base.html" %}
+{% block title %}Chus Naval Home{% endblock %}
+{% block content %}
+    <div id="result">
+    {% block headed %}<h1>Eliminar registro</h1>{% endblock %}
+    <form class='formStyle' name='form' action="">
+        {% if results %}
+            <table id="table_">
+                <tr>
+                    <td>Nombre</td>
+                    <td>Acción</td>
+                </tr>
+                {% for recipeType in results %}
+                    <tr>
+                        <td>{{ recipeType.name|upper }}</td>
+                        <td><a href=#
+                               onclick="deleteRegister('http://localhost:8000/deleteRecipeType/?code={{ recipeType.id }}','result'); return false">Eliminar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>Datos no encontrados</p>
+        {% endif %}
+    </form>
+    {% if exito %}
+        <div class="msg" align="justify">Registro #{{ code }} eliminado</div>
+    {% endif %}
+{% endblock %}
+</div>
