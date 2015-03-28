@@ -42,7 +42,11 @@ INSTALLED_APPS = (
     'cnHome',
     'user',
     'recipeType',
-    'recipe'
+    'recipe',
+    'ingredient',
+    'measurement',
+    'recipeInstruction',
+    'recipeTags'
 )
 
 MIDDLEWARE_CLASSES = (
