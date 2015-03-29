@@ -41,12 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'cnHome',
     'user',
-    'recipeType',
     'recipe',
-    'ingredient',
-    'measurement',
-    'recipeInstruction',
-    'recipeTags'
 )
 
 MIDDLEWARE_CLASSES = (

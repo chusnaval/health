@@ -1,6 +1,8 @@
 from django.conf.urls import patterns
-import settings
 from django.contrib import admin
+
+import settings
+
 
 admin.autodiscover()
 
@@ -9,9 +11,9 @@ urlpatterns = patterns('',
 
                        (r'^menu/$', 'user.views.menu'),
                        (r'^search/$', 'user.views.search'),
-                       (r'^createRecipeType/$', 'recipeType.views.create'),
-                       (r'^deleteRecipeType/$', 'recipeType.views.delete'),
-                       (r'^updateRecipeType/$', 'recipeType.views.update'),
+                       (r'^createRecipeType/$', 'recipe.views.create'),
+                       (r'^deleteRecipeType/$', 'recipe.views.delete'),
+                       (r'^updateRecipeType/$', 'recipe.views.update'),
 
 
                        (r'css/(?P<path>.*)$', 'django.views.static.serve',

@@ -1,6 +1,6 @@
 from django.shortcuts import render_to_response
 
-from recipeType.models import RecipeType
+from recipe.models import RecipeType
 
 
 def search(request):
